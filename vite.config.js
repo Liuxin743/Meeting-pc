@@ -5,12 +5,13 @@ const isProduction = process.env.NODE_ENV === 'production'
 
 export default defineConfig({
   plugins: [vue()],
-  base: isProduction ? '/Meeting-System/' : '/',  
+  base: isProduction ? '/Meeting-pc/' : '/',  
+  
   build: {
     outDir: 'dist',         
-    assetsDir: 'assets',    
-    emptyOutDir: true,      
-    rollupOptions: {        
+    assetsDir: 'assets',   
+    emptyOutDir: true,     
+    rollupOptions: {       
       output: {
         assetFileNames: 'assets/[name].[hash].[ext]',
         chunkFileNames: 'assets/[name].[hash].js',
@@ -18,6 +19,7 @@ export default defineConfig({
       }
     }
   },
+  
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src')
