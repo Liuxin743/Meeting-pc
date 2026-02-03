@@ -384,7 +384,7 @@ onMounted(() => {
 
 /* 登录卡片 */
 .login-card {
-  width: 1000px; 
+  width: 500px; 
   padding: 60px; 
   background-color: #fff;
   border-radius: 16px;
@@ -394,19 +394,14 @@ onMounted(() => {
 /* 登录标题 */
 .login-title {
   text-align: center;
-  font-size: 3em; 
   color: #13171b;
   margin-bottom: 40px; 
   font-weight: bold;
 }
 
-.login-form{
-  font-size: 1em;
-}
 
 /* 注册子标题 */
 .register-subtitle {
-  font-size: 1.8em; 
   color: #333;
   text-align: center;
   margin-bottom: 40px; 
@@ -419,7 +414,6 @@ onMounted(() => {
   justify-content: center;
   margin-bottom: 40px; 
   gap: 25px;
-  font-size: 2em;
 }
 
 .tab-btn {
@@ -428,7 +422,6 @@ onMounted(() => {
   color: #333;
   border: none;
   border-radius: 8px;
-  font-size: 1.3em; 
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -445,7 +438,6 @@ onMounted(() => {
 
 .form-label {
   display: block;
-  font-size: 1.4em; 
   color: #333;
   margin-bottom: 12px; 
   font-weight: 500;
@@ -456,7 +448,6 @@ onMounted(() => {
   padding: 20px 20px;
   border: 1px solid #e5e5e5;
   border-radius: 8px;
-  font-size: 1.3em; 
   box-sizing: border-box;
 }
 
@@ -482,7 +473,6 @@ onMounted(() => {
   color: #fff;
   border: none;
   border-radius: 8px;
-  font-size: 1.2em; 
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: flex;
@@ -509,7 +499,6 @@ onMounted(() => {
 }
 
 .remember-label {
-  font-size: 1.3em; 
   color: #333;
   cursor: pointer;
 }
@@ -522,7 +511,6 @@ onMounted(() => {
   color: #fff;
   border: none;
   border-radius: 8px;
-  font-size: 1.4em; 
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: flex;
@@ -538,7 +526,6 @@ onMounted(() => {
 .register-link, .login-link {
   text-align: center;
   margin-top: 30px; 
-  font-size: 1.3em;
   color: #666;
 }
 

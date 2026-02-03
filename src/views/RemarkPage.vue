@@ -86,23 +86,19 @@ const goBack = () => {
 </script>
 
 <style scoped>
-/* 根节点设置基础*/
-:root {
-  font-size: 16px;
-}
 
 /* 整体样式 */
 .remark-page {
   min-height: 100vh;
   background-color: #f5f5f5;
-  font-size: 3em; }
+ }
 
 /* 头部 */
 .page-header {
   display: flex;
   align-items: center;
   position: relative;
-  font-size: 1.5em; 
+
   font-weight: bold;
   color: #333;
   padding: 0.8em 1em; 
@@ -116,21 +112,22 @@ const goBack = () => {
 .back-icon {
   cursor: pointer;
   margin-right: 0.75em; 
-  font-size: 1.2em;}
+ }
 
 /* 标题 */
 .page-title {
   flex: 1; 
   text-align: center;
   margin-right: 1.25em; 
-  font-size: 1em;}
+  }
 
 /* 内容区域 */
 .page-content {
   padding: 0.8em 1.2em; 
   width: 100%;
+  max-width: 1200px; 
   box-sizing: border-box;
-  margin: 0 auto;
+  margin: 0 auto; 
   min-width: 320px; 
 }
 
@@ -147,7 +144,7 @@ const goBack = () => {
 
 /* 空数据提示 */
 .empty-tip {
-  font-size: 1.2em; 
+ 
   color: #999;
   text-align: center;
   padding: 1.5em 0; 
@@ -177,14 +174,14 @@ const goBack = () => {
 }
 
 .remark-title {
-  font-size: 1.2em;
+
   font-weight: 500;
   color: #333;
   flex-shrink: 0; 
 }
 
 .remark-time {
-  font-size: 1em; 
+ 
   color: #666;
   background-color: #f5fafe;
   padding: 0.125em 0.375em;
@@ -193,7 +190,7 @@ const goBack = () => {
 }
 
 .remark-content {
-  font-size: 1em; 
+
   color: #333;
   line-height: 1.6;
   padding: 0.5em;
@@ -219,7 +216,7 @@ const goBack = () => {
   border: none;
   border-radius: 0.25em;
   padding: 0.25em 0.5em;
-  font-size: 1em; 
+  
   cursor: pointer;
   transition: background-color 0.3s ease;
   flex-shrink: 0; 
@@ -235,7 +232,7 @@ const goBack = () => {
   border: none;
   border-radius: 0.25em;
   padding: 0.25em 0.5em;
-  font-size: 1em; 
+ 
   cursor: pointer;
   transition: background-color 0.3s ease;
   flex-shrink: 0; 
@@ -247,6 +244,6 @@ const goBack = () => {
 
 .mini-btn {
   padding: 0.25em 0.5em;
-  font-size: 1em; 
+ 
 }
 </style>

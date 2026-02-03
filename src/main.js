@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 
 import router from './router'
+import './components/pc-adapt.css'
 
 // 2. 引入 Pinia（状态管理）
 import { createPinia } from 'pinia'

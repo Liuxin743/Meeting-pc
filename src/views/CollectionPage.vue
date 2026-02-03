@@ -76,10 +76,6 @@ const goBack = () => {
 </script>
 
 <style scoped>
-:root {
-  font-size: 20px;
-}
-
 .collection-page {
   min-height: 100vh;
   background-color: #f5f5f5;
@@ -89,7 +85,6 @@ const goBack = () => {
   display: flex;
   align-items: center;
   position: relative;
-  font-size: 4em;
   font-weight: bold;
   color: #333;
   padding: 1em;
@@ -111,6 +106,8 @@ const goBack = () => {
 .page-content {
   padding: 0.8em;
   box-sizing: border-box;
+  max-width: 1200px; 
+  margin: 0 auto; 
 }
 
 .card-common {
@@ -122,7 +119,6 @@ const goBack = () => {
 }
 
 .empty-tip {
-  font-size: 3em;
   color: #999;
   text-align: center;
   padding: 2.5em 0;
@@ -145,13 +141,11 @@ const goBack = () => {
 }
 
 .collection-title {
-  font-size: 3em;
   font-weight: 500;
   color: #333;
 }
 
 .collection-time {
-  font-size: 3em;
   color: #666;
   background-color: #f5fafe;
   padding: 0.1em 0.4em;
@@ -167,7 +161,7 @@ const goBack = () => {
 
 .tag-item {
   padding: 0.1em 0.4em;
-  font-size: 3em;
+
   background-color: #e6f7ff;
   color: #1989fa;
   border-radius: 0.3em;
@@ -176,7 +170,6 @@ const goBack = () => {
 .cancel-collect {
   margin-top: 0.5em;
   padding: 0.2em 0.5em;
-  font-size:3em;
   background-color: #ff4d4f;
   color: #fff;
   border: none;
@@ -191,11 +184,11 @@ const goBack = () => {
 
 .mini-btn {
   padding: 0.2em 0.5em;
-  font-size: 3em;
+
 }
 .back-icon {
   cursor: pointer;
   margin-right: 0.8em;
-  font-size: 1.2em; 
+
 }
 </style>

@@ -330,9 +330,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-:root {
-  font-size: 16px; 
-}
 
 * {
   margin: 0;
@@ -370,7 +367,6 @@ onUnmounted(() => {
 }
 
 .card-title {
-  font-size: 4em;
   font-weight: 600;
   color: #333;
   margin-bottom: 1.2em;
@@ -387,7 +383,6 @@ onUnmounted(() => {
   padding: 0.8em 1em;
   border: 1px solid #ddd;
   border-radius: 0.5em;
-  font-size: 2em;
   background-color: #fff;
   box-sizing: border-box;
   appearance: none; 
@@ -410,7 +405,6 @@ onUnmounted(() => {
 /* 表单标签 */
 .form-label {
   display: block;
-  font-size: 2em;
   color: #333;
   margin-bottom: 0.6em;
 }
@@ -421,7 +415,6 @@ onUnmounted(() => {
   padding: 0.8em 1em;
   border: 1px solid #ddd;
   border-radius: 0.5em;
-  font-size: 2em;
   box-sizing: border-box; 
 }
 
@@ -433,7 +426,6 @@ onUnmounted(() => {
   border-radius: 0.5em;
   background-color: #1989fa;
   color: #fff;
-  font-size: 2.2em;
   cursor: pointer;
   transition: opacity 0.3s ease;
   box-sizing: border-box;
@@ -447,7 +439,6 @@ onUnmounted(() => {
   text-align: center;
   padding: 2em 0;
   color: #999;
-  font-size: 2.2em;
   background-color: #fafafa;
   border-radius: 0.5em;
   width: 100%;
@@ -461,7 +452,6 @@ onUnmounted(() => {
   border-bottom: 1px solid #f0f0f0;
   width: 100%;
   flex-wrap: wrap;
-  font-size: 2em;
 }
 
 .cell-content {
@@ -470,7 +460,6 @@ onUnmounted(() => {
 }
 
 .countdown-box {
-  font-size: 2em;
   color: #1989fa;
   margin-top: 0.5em;
 }
@@ -492,7 +481,6 @@ onUnmounted(() => {
   background-color: #fff;
   padding: 1em 2em;
   border-radius: 0.5em;
-  font-size: 2.2em;
   color: #333;
 }
 </style>

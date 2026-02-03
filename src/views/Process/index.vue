@@ -401,21 +401,26 @@ onMounted(() => {
 });
 </script>
 <style scoped>
+
+/* 基础重置：统一字体和间距基准 */
 :root {
-  font-size: 16px;
+  font-size: 14px; /* PC端基础字体大小 */
 }
 
 .meeting-venue-container {
   min-height: 100vh;
   background-color: #f5f5f5;
-  font-size: 3em;
+  padding: 0;
+  margin: 0;
 }
 
-/* 宣传图 */
+/* 宣传图：固定高度+限制宽度 */
 .meeting-banner {
   width: 100%;
-  height: 8em;
+  height: 200px;
   overflow: hidden;
+  margin: 0 auto;
+  max-width: 1200px; /* 和内容区保持一致 */
 }
 
 .banner-img {
@@ -424,38 +429,42 @@ onMounted(() => {
   object-fit: cover;
 }
 
-/* 标题 */
+/* 标题：增加间距和字体大小 */
 .page-title-wrap {
-  padding: 0.8em 1em;
+  padding: 1.5em 1em;
   text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .page-title {
-  font-size: 2em;
+  font-size: 24px;
   font-weight: bold;
   color: #333;
   margin: 0;
 }
 
-/* 会场切换标签*/
+/* 会场切换标签：优化样式和间距 */
 .tab-switch-container {
   display: flex;
-  gap: 0.4em;
-  padding: 0.6em;
+  gap: 12px;
+  padding: 1em;
   overflow-x: auto;
   background-color: #fff;
   border-bottom: 1px solid #f0f0f0;
   white-space: nowrap;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .tab-item {
-  padding: 0.3em 0.8em;
-  border-radius: 0.4em;
+  padding: 8px 16px;
+  border-radius: 6px;
   background-color: #f5f5f5;
   color: #666;
-  font-size: 1em;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-size: 14px;
 }
 
 .tab-item.active {
@@ -468,35 +477,37 @@ onMounted(() => {
   color: #1989fa;
 }
 
-/* 空会场提示*/
+/* 空会场提示：优化间距和字体 */
 .empty-venue-tip {
-  font-size: 1.2em;
   color: #999;
   text-align: center;
-  padding: 1.5em 0;
+  padding: 2em 0;
   background-color: #fafafa;
-  margin: 0.625em;
-  border-radius: 0.5em;
+  margin: 1em auto;
+  border-radius: 8px;
   width: 100%;
+  max-width: 1200px;
   box-sizing: border-box;
+  font-size: 14px;
 }
 
-/* 内容区域*/
+/* 内容区域：固定最大宽度+居中+间距 */
 .page-content {
-  padding: 0.8em 1.2em;
+  padding: 2em 1.5em;
   width: 100%;
+  max-width: 1200px;
   box-sizing: border-box;
   margin: 0 auto;
   min-width: 320px;
 }
 
-/* 会场信息卡片 */
+/* 会场信息卡片：优化内边距和字体 */
 .venue-card {
   background-color: #fff;
-  border-radius: 0.5em;
-  padding: 1em;
-  margin-bottom: 1em;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding: 2em;
+  margin-bottom: 2em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   width: 100%;
   box-sizing: border-box;
 }
@@ -504,40 +515,41 @@ onMounted(() => {
 .venue-header {
   display: flex;
   align-items: center;
-  gap: 0.6em;
-  margin-bottom: 0.8em;
+  gap: 12px;
+  margin-bottom: 1.5em;
   flex-wrap: wrap;
 }
 
 .venue-tag {
-  padding: 0.2em 0.6em;
-  border-radius: 0.2em;
-  font-size: 1em;
+  padding: 6px 12px;
+  border-radius: 4px;
   color: #fff;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .venue-title {
-  font-size: 1.5em;
+  font-size: 20px;
   color: #333;
   margin: 0;
   flex: 1;
 }
 
 .venue-info {
-  margin-top: 0.8em;
+  margin-top: 1.5em;
 }
 
 .info-item {
   display: flex;
-  margin-bottom: 0.6em;
-  font-size: 1.2em;
+  margin-bottom: 1em;
   flex-wrap: wrap;
+  font-size: 14px;
 }
 
 .info-label {
   color: #666;
   font-weight: 500;
-  width: 5em;
+  width: 6em;
   flex-shrink: 0;
 }
 
@@ -551,77 +563,78 @@ onMounted(() => {
 }
 
 .content-desc {
-  margin-top: 0.25em;
-  padding: 0.5em;
+  margin-top: 0.5em;
+  padding: 1em;
   background-color: #f9f9f9;
-  border-radius: 0.25em;
+  border-radius: 6px;
   line-height: 1.6;
   width: 100%;
+  font-size: 14px;
 }
 
-/* 流程内容 */
+/* 流程内容：优化样式 */
 .flow-content {
   background-color: #fff;
-  border-radius: 0.5em;
-  padding: 1em;
-  margin-bottom: 1em;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding: 2em;
+  margin-bottom: 2em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   width: 100%;
   box-sizing: border-box;
 }
 
 .flow-header {
   border-bottom: 1px solid #f0f0f0;
-  padding-bottom: 0.6em;
-  margin-bottom: 0.8em;
+  padding-bottom: 1em;
+  margin-bottom: 1.5em;
 }
 
 .flow-title {
-  font-size: 1.5em;
+  font-size: 18px;
   color: #333;
   margin: 0;
 }
 
 /* 空议程提示 */
 .empty-tip {
-  font-size: 1.2em;
   color: #999;
   text-align: center;
-  padding: 1.5em 0;
+  padding: 2em 0;
   background-color: #fafafa;
-  border-radius: 0.5em;
-  margin: 0.625em 0;
+  border-radius: 8px;
+  margin: 1em 0;
   width: 100%;
   box-sizing: border-box;
+  font-size: 14px;
 }
 
-/* 议程列表 */
+/* 议程列表：优化间距和字体 */
 .flow-step-list {
   display: flex;
   flex-direction: column;
-  gap: 0.8em;
+  gap: 1.5em;
   width: 100%;
 }
 
 .agenda-item {
-  margin-bottom: 0.8em;
+  margin-bottom: 1.5em;
   width: 100%;
 }
 
 .agenda-title {
   display: flex;
   align-items: center;
-  gap: 0.6em;
-  padding: 0.6em;
+  gap: 12px;
+  padding: 1em;
   background-color: #f5fafe;
-  border-left: 0.2em solid #1989fa;
-  border-radius: 0 0.25em 0.25em 0;
+  border-left: 4px solid #1989fa;
+  border-radius: 0 6px 6px 0;
   cursor: pointer;
-  font-size: 1.2em;
   color: #333;
   transition: background-color 0.3s ease;
   width: 100%;
   box-sizing: border-box;
+  font-size: 16px;
 }
 
 .agenda-title:hover {
@@ -629,63 +642,64 @@ onMounted(() => {
 }
 
 .agenda-num {
-  width: 1.2em;
-  height: 1.2em;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1em;
   font-weight: bold;
+  font-size: 14px;
 }
 
 .expand-icon {
-  font-size: 1em;
   color: #666;
   transition: transform 0.3s ease;
   margin-left: auto;
+  font-size: 16px;
 }
 
 .expand-icon.expanded {
   transform: rotate(90deg);
 }
 
-/* 自定义流程列表 */
+/* 自定义流程列表：优化间距 */
 .custom-flow-list {
-  margin-left: 1.5em;
-  margin-top: 0.6em;
+  margin-left: 30px;
+  margin-top: 1em;
   display: flex;
   flex-direction: column;
-  gap: 0.6em;
+  gap: 1em;
   width: 100%;
 }
 
 .custom-flow-step {
-  padding: 0.6em;
+  padding: 1em;
   background-color: #f9f9f9;
-  border-radius: 0.25em;
+  border-radius: 6px;
   width: 100%;
   box-sizing: border-box;
+  font-size: 14px;
 }
 
 .custom-step-header {
   display: flex;
-  gap: 0.6em;
+  gap: 12px;
   align-items: flex-start;
   flex-wrap: wrap;
 }
 
 .custom-step-num {
-  width: 1em;
-  height: 1em;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1em;
   font-weight: bold;
   flex-shrink: 0;
   margin-top: 0.2em;
+  font-size: 12px;
 }
 
 .step-info-wrap {
@@ -693,24 +707,22 @@ onMounted(() => {
 }
 
 .custom-step-title {
-  font-size: 1.2em;
+  font-size: 16px;
   color: #333;
-  margin: 0 0 0.2em 0;
+  margin: 0 0 0.5em 0;
 }
 
 .custom-step-desc {
-  font-size: 1em;
   color: #666;
-  margin-bottom: 0.2em;
+  margin-bottom: 0.5em;
   line-height: 1.5;
 }
 
 .step-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6em;
-  margin-bottom: 0.4em;
-  font-size: 1em;
+  gap: 12px;
+  margin-bottom: 1em;
 }
 
 .custom-step-time {
@@ -723,16 +735,16 @@ onMounted(() => {
 
 .step-actions-bottom {
   display: flex;
-  gap: 0.6em;
-  font-size: 1em;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
 .action-btn {
-  padding: 0.2em 0.4em;
-  border-radius: 0.25em;
+  padding: 6px 12px;
+  border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-size: 12px;
 }
 
 .collect-btn {
@@ -750,7 +762,7 @@ onMounted(() => {
   color: #ff9500;
 }
 
-/* 备注弹窗 */
+/* 备注弹窗：优化样式 */
 .modal-mask {
   position: fixed;
   top: 0;
@@ -766,48 +778,48 @@ onMounted(() => {
 
 .modal-content {
   background-color: #fff;
-  border-radius: 0.5em;
-  padding: 1em;
+  border-radius: 8px;
+  padding: 2em;
   width: 90%;
-  max-width: 40em;
+  max-width: 500px;
   min-width: 280px;
   box-sizing: border-box;
 }
 
 .modal-title {
-  font-size: 1.5em;
+  font-size: 18px;
   color: #333;
-  margin: 0 0 0.8em 0;
+  margin: 0 0 1em 0;
   text-align: center;
 }
 
 .remark-input {
   width: 100%;
-  padding: 0.5em;
+  padding: 1em;
   border: 1px solid #e5e5e5;
-  border-radius: 0.25em;
-  font-size: 1.2em;
-  min-height: 4em;
+  border-radius: 6px;
+  min-height: 100px;
   resize: vertical;
   box-sizing: border-box;
+  font-size: 14px;
 }
 
 .modal-btns {
   display: flex;
-  gap: 0.8em;
-  margin-top: 0.8em;
+  gap: 16px;
+  margin-top: 1.5em;
   flex-wrap: wrap;
 }
 
 .modal-btn {
   flex: 1;
-  padding: 0.6em 0;
+  padding: 12px 0;
   border: none;
-  border-radius: 0.25em;
-  font-size: 1.2em;
+  border-radius: 6px;
   cursor: pointer;
   transition: opacity 0.3s ease;
-  min-width: 8em;
+  min-width: 120px;
+  font-size: 14px;
 }
 
 .cancel-btn {

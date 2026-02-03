@@ -10,7 +10,6 @@
 
       <!-- 我创建的会场列表 -->
       <div class="venue-card card-common" style="margin-top: 10px;">
-        <!-- 调整：将按钮移到标题旁（左侧红框），去掉space-between，改用gap控制间距 -->
         <div style="display: flex; align-items: center; gap: 1em;">
           <h3 class="card-title">我创建的会场</h3>
           <button class="create-btn venue-operation-btn" style="background-color: #4cd964;" @click="openOnlyVenueDialog">
@@ -1007,16 +1006,11 @@ onMounted(() => {
 </script>
 
 <style scoped>
-/* 根节点设置基础字体 */
-:root {
-  font-size: 16px; 
-}
 
 /* 页面 */
 .create-meeting-view {
   min-height: 100vh;
-  background-color: #f5f5f5;
-  font-size: .8em; 
+  background-color: #f5f5f5; 
 }
 
 /* 内容区域 */
@@ -1045,7 +1039,6 @@ onMounted(() => {
 }
 
 .card-title {
-  font-size: 5em; 
   font-weight: bold;
   color: #333;
   margin-bottom: 0.75em;
@@ -1053,7 +1046,6 @@ onMounted(() => {
 
 /* 空数据提示 */
 .empty-tip {
-  font-size: 4em; 
   color: #999;
   text-align: center;
   padding: 1.25em 0;
@@ -1080,7 +1072,6 @@ onMounted(() => {
   border: none;
   border-radius: 0.5em;
   padding:0.1em 0.5em;
-  font-size: 4em; 
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -1107,7 +1098,7 @@ onMounted(() => {
   width: auto !important; 
   min-width: 1em !important; 
   max-width: 10em !important; 
-  font-size: 3em !important; 
+
   padding: 0.5em 1.2em !important;
   border-radius: 0.6em !important;
 }
@@ -1154,7 +1145,7 @@ onMounted(() => {
 }
 
 .venue-title {
-  font-size: 4.5em; 
+
   color: #333;
   font-weight: 500;
   overflow: hidden;
@@ -1165,7 +1156,7 @@ onMounted(() => {
 .venue-type-tag {
   padding: 0.125em 0.375em;
   border-radius: 0.1875em;
-  font-size: 3em; 
+
   color: #fff;
   font-weight: 500;
   opacity: 0.9;
@@ -1173,7 +1164,7 @@ onMounted(() => {
 }
 
 .creator-tag {
-  font-size: 3em; 
+
   color: #999;
   margin-left: 0.5em;
   background-color: #f5f5f5;
@@ -1200,7 +1191,7 @@ onMounted(() => {
 }
 
 .venue-label {
-  font-size: 3.5em; 
+
   color: #666;
   margin-bottom: 0.1875em;
 }
@@ -1231,7 +1222,7 @@ onMounted(() => {
 }
 
 .share-id-label {
-  font-size: 3em; 
+
   color: #666;
   white-space: nowrap;
 }
@@ -1243,7 +1234,7 @@ onMounted(() => {
   padding: 0.125em 0.5em;
   border-radius: 0.25em;
   font-weight: 500;
-  font-size: 3.5em; 
+
   cursor: pointer;
   transition: all 0.2s ease;
   flex: 1; 
@@ -1292,7 +1283,7 @@ onMounted(() => {
 }
 
 .agenda-title {
-  font-size: 4.5em; 
+
   color: #333;
   margin-bottom: 0.25em;
   font-weight: 500;
@@ -1302,7 +1293,7 @@ onMounted(() => {
 }
 
 .agenda-label {
-  font-size: 3.5em; 
+
   color: #666;
   margin-bottom: 0.125em;
 }
@@ -1324,7 +1315,7 @@ onMounted(() => {
   cursor: pointer;
   transition: background-color 0.3s ease;
   padding: 0.25em 0.5em;
-  font-size: 3em; 
+
   white-space: nowrap;
 }
 
@@ -1348,7 +1339,6 @@ onMounted(() => {
   cursor: pointer;
   transition: background-color 0.3s ease;
   padding: 0.25em 0.5em;
-  font-size: 3em; 
   white-space: nowrap;
 }
 
@@ -1357,7 +1347,6 @@ onMounted(() => {
 }
 
 .mini-btn {
-  font-size: 3em; 
   flex-shrink: 0;
 }
 
@@ -1394,7 +1383,6 @@ onMounted(() => {
 }
 
 .dialog-title {
-  font-size: 6em; 
   font-weight: bold;
   color: #333;
   margin-bottom: 1em;
@@ -1402,7 +1390,6 @@ onMounted(() => {
 }
 
 .form-tip {
-  font-size: 3em; 
   color: #999;
   margin-top: 0.25em;
   margin-bottom: 1em;
@@ -1410,7 +1397,6 @@ onMounted(() => {
 }
 
 .step-title {
-  font-size: 4.5em; 
   font-weight: bold;
   color: #1989fa;
   margin-bottom: 0.75em;
@@ -1432,7 +1418,6 @@ onMounted(() => {
   color: #ffffff;
   border: none;
   border-radius: 0.25em;
-  font-size: 4em; 
   cursor: pointer;
   transition: opacity 0.2s ease;
   min-width: 12em;
@@ -1449,7 +1434,6 @@ onMounted(() => {
   color: #666;
   border: none;
   border-radius: 0.25em;
-  font-size: 4em; 
   cursor: pointer;
   transition: background-color 0.2s ease;
   min-width: 12em;
@@ -1466,7 +1450,6 @@ onMounted(() => {
 }
 
 .form-label {
-  font-size: 4em; 
   color: #333;
   margin-bottom: 0.25em;
   display: block;
@@ -1478,7 +1461,6 @@ onMounted(() => {
   padding: 0.5em 0.625em;
   border: 0.0625em solid #e5e5e5;
   border-radius: 0.25em;
-  font-size: 3.5em; 
   box-sizing: border-box;
   transition: border-color 0.2s ease;
 }
@@ -1498,7 +1480,6 @@ onMounted(() => {
 .file-input {
   width: 100%;
   padding: 0.5em;
-  font-size: 3.5em; 
   color: #666;
 }
 
@@ -1518,7 +1499,6 @@ onMounted(() => {
   border: 0.0625em dashed #1989fa;
   border-radius: 0.25em;
   color: #1989fa;
-  font-size: 3.5em; 
   cursor: pointer;
   transition: all 0.3s ease;
   margin-bottom: 0.75em;
@@ -1553,7 +1533,6 @@ onMounted(() => {
 }
 
 .step-num {
-  font-size: 3.5em; 
   font-weight: bold;
   color: #1989fa;
   white-space: nowrap;
@@ -1584,21 +1563,18 @@ onMounted(() => {
   width: 100%;
 }
 
-.step-form-label {
-  font-size: 3.5em; 
+.step-form-label { 
   color: #333;
   margin-bottom: 0.1875em;
 }
 
 .step-input {
-  font-size: 3em; 
   padding: 0.375em 0.5em;
   width: 100%;
   box-sizing: border-box;
 }
 
-.step-textarea {
-  font-size: 3em; 
+.step-textarea { 
   padding: 0.375em 0.5em;
   resize: vertical;
   min-height: 3.75em;
@@ -1629,7 +1605,6 @@ onMounted(() => {
   color: #ffffff;
   padding: 0.625em 1.25em;
   border-radius: 0.25em;
-  font-size: 3em; 
   animation: fadeInOut 1.5s ease;
   white-space: nowrap; /* 提示文字不换行 */
 }

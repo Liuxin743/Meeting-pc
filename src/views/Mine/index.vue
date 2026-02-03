@@ -176,9 +176,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-:root {
-  font-size: 20px;
-}
 
 .mine-view {
   min-height: 100vh;
@@ -228,12 +225,10 @@ onMounted(() => {
 
 .function-title {
   flex: 1;
-  font-size: 3em;
   color: #333;
 }
 
 .function-arrow {
-  font-size: 3em;
   color: #c8c9cc;
 }
 
@@ -251,7 +246,6 @@ onMounted(() => {
   border: none;
   border-radius: 0.2em;
   padding: 1em 2em;
-  font-size: 3em;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -303,7 +297,6 @@ onMounted(() => {
 }
 
 .dialog-title {
-  font-size: 3em;
   font-weight: bold;
   color: #333;
   margin-bottom: 1em;
@@ -315,7 +308,6 @@ onMounted(() => {
 }
 
 .form-label {
-  font-size: 3em;
   color: #333;
   margin-bottom: 0.3em;
   display: block;
@@ -327,7 +319,6 @@ onMounted(() => {
   padding: 0.5em 0.6em;
   border: 0.05em solid #e5e5e5;
   border-radius: 0.3em;
-  font-size: 3em;
   box-sizing: border-box;
   transition: border-color 0.2s ease;
 }
@@ -340,7 +331,6 @@ onMounted(() => {
 .file-input {
   width: 100%;
   padding: 0.5em;
-  font-size: 3em;
   color: #666;
 }
 
@@ -357,7 +347,6 @@ onMounted(() => {
   color: #ffffff;
   border: none;
   border-radius: 0.3em;
-  font-size: 3em;
   cursor: pointer;
   transition: opacity 0.2s ease;
 }
@@ -373,7 +362,6 @@ onMounted(() => {
   color: #666;
   border: none;
   border-radius: 0.3em;
-  font-size: 3em;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }

@@ -807,10 +807,6 @@ END:VCALENDAR`.replace(/\\n/g, '')
 </script>
 
 <style scoped>
-/* 页面基础 */
-:root {
-  font-size: 20px; 
-}
 
 .home-page {
   min-height: 100vh;
@@ -836,7 +832,6 @@ END:VCALENDAR`.replace(/\\n/g, '')
 }
 
 .card-title {
-  font-size: 4em;
   font-weight: bold;
   color: #333;
   margin: 0;
@@ -895,7 +890,6 @@ END:VCALENDAR`.replace(/\\n/g, '')
 }
 
 .upcoming-title {
-  font-size: 1.1em;
   font-weight: 500;
   color: #333;
   flex: 1;
@@ -907,12 +901,10 @@ END:VCALENDAR`.replace(/\\n/g, '')
 .upcoming-status-tag {
   padding: 0.3em 0.6em;
   border-radius: 1.2em;
-  font-size: 0.9em;
   white-space: nowrap;
 }
 
 .upcoming-time {
-  font-size: 0.9em;
   color: #666;
   margin-bottom: 0.6em;
 }
@@ -946,13 +938,11 @@ END:VCALENDAR`.replace(/\\n/g, '')
 }
 
 .notice-type {
-  font-size: 1.1em;
   font-weight: 500;
   color: #333;
 }
 
 .notice-status {
-  font-size: 0.9em;
   padding: 0.3em 0.6em;
   border-radius: 1.2em;
   background-color: #e6f7ff;
@@ -965,7 +955,6 @@ END:VCALENDAR`.replace(/\\n/g, '')
 }
 
 .notice-content {
-  font-size: 0.9em;
   color: #666;
   line-height: 1.7;
 }
@@ -1006,7 +995,6 @@ END:VCALENDAR`.replace(/\\n/g, '')
 }
 
 .loading-content {
-  font-size: 1.1em;
   color: #1989fa;
 }
 
@@ -1016,7 +1004,6 @@ END:VCALENDAR`.replace(/\\n/g, '')
   padding: 0.8em;
   border-radius: 0.4em;
   margin-bottom: 0.8em;
-  font-size: 1.1em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1024,7 +1011,6 @@ END:VCALENDAR`.replace(/\\n/g, '')
 }
 
 .error-close {
-  font-size: 1.3em;
   font-weight: bold;
 }
 
@@ -1034,7 +1020,6 @@ END:VCALENDAR`.replace(/\\n/g, '')
 }
 
 .empty-tip {
-  font-size: 3em;
   color: #999;
   text-align: center;
   padding: 3em 0;
@@ -1061,7 +1046,6 @@ END:VCALENDAR`.replace(/\\n/g, '')
 }
 
 .agenda-title {
-  font-size: 3em;
   font-weight: 500;
   color: #333;
   cursor: pointer;
@@ -1075,7 +1059,6 @@ END:VCALENDAR`.replace(/\\n/g, '')
 }
 
 .agenda-time {
-  font-size: 0.9em;
   color: #666;
   background-color: #f5fafe;
   padding: 0.3em 0.5em;
@@ -1099,7 +1082,6 @@ END:VCALENDAR`.replace(/\\n/g, '')
   cursor: pointer;
   transition: background-color 0.3s ease;
   padding: 0.3em 0.5em;
-  font-size: 3em;
 }
 
 .btn-normal:hover {
@@ -1117,7 +1099,6 @@ END:VCALENDAR`.replace(/\\n/g, '')
   border: none;
   border-radius: 0.4em;
   cursor: pointer;
-  font-size: 3em;
   padding: 0.4em 0.6em;
   transition: background-color 0.3s ease;
 }
@@ -1140,13 +1121,11 @@ END:VCALENDAR`.replace(/\\n/g, '')
 
 .tag-item {
   padding: 0.3em 0.5em;
-  font-size:3em;
   background-color: #e6f7ff;
   color: #1989fa;
   border-radius: 0.4em;
 }
 .agenda-title{
-  font-size: 4em;
   font-weight: 500;
   
 }
@@ -1159,13 +1138,11 @@ END:VCALENDAR`.replace(/\\n/g, '')
 }
 
 .remark-label {
-  font-size: 0.9em;
   color: #666;
   margin-bottom: 0.4em;
 }
 
 .remark-content {
-  font-size: 1.1em;
   color: #333;
   line-height: 1.7;
   padding: 0.6em;
@@ -1216,7 +1193,6 @@ END:VCALENDAR`.replace(/\\n/g, '')
 }
 
 .dialog-title {
-  font-size: 3em;
   font-weight: bold;
   color: #333;
   margin-bottom: 1.2em;
@@ -1228,7 +1204,6 @@ END:VCALENDAR`.replace(/\\n/g, '')
 }
 
 .form-label {
-  font-size: 1.1em;
   color: #333;
   margin-bottom: 0.4em;
   display: block;
@@ -1239,7 +1214,6 @@ END:VCALENDAR`.replace(/\\n/g, '')
   padding: 0.6em 0.8em;
   border: 1px solid #e5e5e5;
   border-radius: 0.4em;
-  font-size: 1.1em;
   box-sizing: border-box;
 }
 
@@ -1255,7 +1229,6 @@ END:VCALENDAR`.replace(/\\n/g, '')
   color: #666;
   border: none;
   border-radius: 0.4em;
-  font-size: 1.1em;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -1271,7 +1244,6 @@ END:VCALENDAR`.replace(/\\n/g, '')
   color: #ffffff;
   border: none;
   border-radius: 0.4em;
-  font-size: 1.1em;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -1290,7 +1262,6 @@ END:VCALENDAR`.replace(/\\n/g, '')
 
 .tag-option {
   padding: 0.5em 1em;
-  font-size: 1.1em;
   background-color: #f5f5f5;
   border-radius: 0.4em;
   cursor: pointer;
@@ -1308,7 +1279,6 @@ END:VCALENDAR`.replace(/\\n/g, '')
   padding: 0.8em;
   border: 1px solid #e5e5e5;
   border-radius: 0.4em;
-  font-size: 1.1em;
   box-sizing: border-box;
   resize: none;
   margin-bottom: 1.2em;
@@ -1320,7 +1290,6 @@ END:VCALENDAR`.replace(/\\n/g, '')
 }
 
 .share-tips {
-  font-size: 1.1em;
   color: #333;
   margin-bottom: 0.6em;
 }
@@ -1329,7 +1298,6 @@ END:VCALENDAR`.replace(/\\n/g, '')
   padding: 0.6em;
   background-color: #f5f5f5;
   border-radius: 0.4em;
-  font-size: 0.9em;
   word-break: break-all;
   color: #666;
   margin-bottom: 0.8em;
@@ -1341,7 +1309,6 @@ END:VCALENDAR`.replace(/\\n/g, '')
   border: none;
   border-radius: 0.4em;
   padding: 0.5em 1em;
-  font-size: 0.9em;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -1369,13 +1336,9 @@ END:VCALENDAR`.replace(/\\n/g, '')
   color: #ffffff;
   padding: 1em 1.5em;
   border-radius: 1.5em;
-  font-size: 1.1em;
 }
 .notice-item[data-v-a763a6ae] {
     padding: 1em 0;
-    font-size: 3em;
 }
-:global(.el-card__body){
-  font-size: 3em;
-}
+
 </style>

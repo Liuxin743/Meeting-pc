@@ -271,7 +271,7 @@ onMounted(() => {
 
 /* 左侧导航栏 */
 .left-sidebar {
-  width: 600px;
+  width: 240px;
   height: 100vh;
   background-color: #13171b;
   color: #fff;
@@ -284,7 +284,7 @@ onMounted(() => {
 }
 
 .left-sidebar.collapsed {
-  width: 150px;
+  width: 80px; 
 }
 
 .sidebar-header {
@@ -298,28 +298,20 @@ onMounted(() => {
 }
 
 .sidebar-title {
-  font-size: 4em;
   font-weight: bold;
-  margin: 100px 50px 0 50px;
 }
 
 .collapse-btn {
   background: transparent;
   border: none;
   color: #fff;
-  font-size: 3em;
   cursor: pointer;
-  transition: transform 0.3s ease;
-  margin: 100px 50px 0 50px;
-}
+  transition: transform 0.3s ease;}
 
 .collapse-btn:hover {
   transform: scale(1.1);
 }
 
-.sidebar-menu {
-  padding-top: 20px;
-}
 
 .menu-item {
   display: flex;
@@ -358,14 +350,12 @@ onMounted(() => {
 }
 
 .menu-icon {
-  font-size: 4em;
   margin: 0 10px;
   width: 50px;
   text-align: center;
 }
 
 .menu-text {
-  font-size: 4em;
   margin-left: 40px;
   transition: opacity 0.3s ease;
 }
@@ -373,15 +363,16 @@ onMounted(() => {
 /* 右侧内容区 */
 .right-content {
   flex: 1;
-  margin-left: 300px;
+  margin-left: 240px;
   transition: margin-left 0.3s ease;
-  height: 100vh;
-  overflow: hidden;
+  height: auto; /* 去掉固定高度 */
+  min-height: 100vh; /* 保证至少占满视口 */
+  overflow: visible; /* 去掉隐藏 */
   position: relative;
 }
 
 .left-sidebar.collapsed + .right-content {
-  margin-left: 100px;
+  margin-left: 80px; 
 }
 
 /* 顶部用户信息 */
@@ -390,8 +381,8 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 0 100px;
-  margin-top: 40px;
+  padding: 0 2000px;
+  margin-top: 50px;
   background-color: transparent;
   border-bottom: none;
 }
@@ -405,7 +396,6 @@ onMounted(() => {
   align-items: center;
   justify-content: center;
   color: #1989fa;
-  font-size: 2em;
   overflow: hidden;
   cursor: pointer;
   margin-right: 10px;
@@ -419,7 +409,6 @@ onMounted(() => {
 }
 
 .user-name {
-  font-size: 3em;
   color: #333;
   font-weight: 500;
 }
@@ -427,16 +416,17 @@ onMounted(() => {
 /* 右侧内容容器 */
 .content-container {
   width: 100%;
-  height: calc(100% - 80px);
-  overflow-y: auto;
+  height: auto; /* 去掉固定高度 */
+  overflow-y: visible; /* 去掉容器内滚动 */
   box-sizing: border-box;
-  padding: 10px;
+  padding: 20px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 /* 个人信息弹窗 */
 .user-edit-content {
   padding: 0.6em 0;
-  font-size: 2em; 
 }
 
 .edit-item {
@@ -444,7 +434,6 @@ onMounted(() => {
 }
 
 .edit-label {
-  font-size: 2em; 
   color: #333;
   margin-bottom: 0.5em;
   display: block;
@@ -454,7 +443,6 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   gap: 0.5em;
-  font-size: 1.2em; 
 }
 
 .preview-avatar {
@@ -470,27 +458,23 @@ onMounted(() => {
 }
 
 .upload-btn {
-  font-size: 1.2em; 
   padding: 0.4em 1.2em; 
 }
 
 .upload-tip {
-  font-size: 1.1em; 
   color: #999;
   margin-top: 0.3em;
 }
 
 .name-input {
   margin-top: 0.3em;
-  font-size: 1.2em; 
 }
 
 :global(.van-dialog__header) {
-  font-size: 4em !important;
   padding: 0.8em 0;
 }
-
-:global(.van-button__content) {
-  font-size: 2.5em !important; 
+:global(.van-dialog) {
+  max-width: 600px !important; 
+  width: 80% !important;
 }
 </style>

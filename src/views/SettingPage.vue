@@ -78,23 +78,18 @@ watch(notificationSwitch, (newValue) => {
 </script>
 
 <style scoped>
-/* 根节点设置基础字体 */
-:root {
-  font-size: 16px; 
-}
-
 /* 整体样式 */
 .setting-page {
   min-height: 100vh;
   background-color: #f5f5f5;
-  font-size: 3em; 
+
 }
 
 .page-header {
   display: flex;
   align-items: center;
   position: relative;
-  font-size: 2em; 
+
   font-weight: bold;
   color: #333;
   padding: 0.8em 1em; 
@@ -108,7 +103,7 @@ watch(notificationSwitch, (newValue) => {
 .back-icon {
   cursor: pointer;
   margin-right: 0.75em;
-  font-size: 1.8em; 
+
 }
 
 /* 标题 */
@@ -116,7 +111,7 @@ watch(notificationSwitch, (newValue) => {
   flex: 1;
   text-align: center;
   margin-right: 1.25em;
-  font-size: 1em; 
+
 }
 
 /* 内容*/
@@ -146,7 +141,7 @@ watch(notificationSwitch, (newValue) => {
   align-items: center;
   padding: 0.8em 0; 
   border-bottom: 1px solid #f0f0f0;
-  font-size: 1.2em; 
+
   width: 100%; 
   box-sizing: border-box; 
   flex-wrap: wrap;
@@ -158,13 +153,11 @@ watch(notificationSwitch, (newValue) => {
 }
 
 .setting-label {
-  font-size: 1em; 
   color: #333;
   flex-shrink: 0; 
 }
 
 .version-text {
-  font-size: 0.9em;
   color: #666;
 }
 
@@ -176,7 +169,7 @@ watch(notificationSwitch, (newValue) => {
   border-radius: 0.25em;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-size: 0.9em; 
+
 }
 
 .btn-normal:hover {
@@ -184,8 +177,7 @@ watch(notificationSwitch, (newValue) => {
 }
 
 .mini-btn {
-  padding: 0.25em 0.5em;
-  font-size: 0.9em; 
+  padding: 0.25em 0.5em; 
 }
 
 .van-switch {
