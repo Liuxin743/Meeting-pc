@@ -401,17 +401,20 @@ onMounted(() => {
 });
 </script>
 <style scoped>
-
 /* 基础重置：统一字体和间距基准 */
 :root {
   font-size: 14px; /* PC端基础字体大小 */
 }
 
+/* 根容器：强制全屏+开启垂直滚动（核心修复），解决底部内容截断 */
 .meeting-venue-container {
   min-height: 100vh;
+  height: 100vh; /* 固定视口高度，触发滚动条件 */
   background-color: #f5f5f5;
   padding: 0;
   margin: 0;
+  overflow-y: auto; /* 开启垂直滚动，内容超出时显示滚轮 */
+  overflow-x: hidden; /* 隐藏横向多余滚动，优化视觉 */
 }
 
 /* 宣传图：固定高度+限制宽度 */
@@ -499,6 +502,9 @@ onMounted(() => {
   box-sizing: border-box;
   margin: 0 auto;
   min-width: 320px;
+  /* 新增：防止内容横向溢出 */
+  overflow: visible;
+      margin-bottom: 100px;
 }
 
 /* 会场信息卡片：优化内边距和字体 */
@@ -572,7 +578,7 @@ onMounted(() => {
   font-size: 14px;
 }
 
-/* 流程内容：优化样式 */
+/* 流程内容：优化样式 + 可选内部滚动（防止单区域溢出） */
 .flow-content {
   background-color: #fff;
   border-radius: 8px;
@@ -581,6 +587,9 @@ onMounted(() => {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   width: 100%;
   box-sizing: border-box;
+  /* 可选：若流程内容过多，开启内部滚动 */
+  /* max-height: 600px; */
+  /* overflow-y: auto; */
 }
 
 .flow-header {

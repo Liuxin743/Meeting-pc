@@ -23,9 +23,9 @@
       </div>
     </div>
 
-    <!-- 右侧主体内容区 -->
-    <div class="right-content" :style="{ marginLeft: sidebarCollapsed ? '200px' : '650px' }">
-      <!-- 顶部用户信息区（显示注册/登录的用户名） -->
+    <!-- 右侧主体内容区（移除硬编码 :style） -->
+    <div class="right-content">
+      <!-- 顶部用户信息区（修复 padding 异常） -->
       <div class="top-user-info">
         <div class="user-avatar" @click="openUserEditDialog">
           <van-icon v-if="!userAvatar" name="user" size="30" color="#1989fa" />
@@ -34,17 +34,16 @@
         <div class="user-name">{{ userName }}</div>
       </div>
 
-      <!-- 页面内容容器 -->
+      <!-- 页面内容容器（优化滚动） -->
       <div class="content-container">
         <router-view />
       </div>
     </div>
 
-    <!-- 个人信息编辑弹窗 -->
+    <!-- 个人信息编辑弹窗（简化宽度配置） -->
     <van-dialog
       v-model:show="userEditDialogVisible"
       title="编辑个人信息"
-      width="40%"
       confirm-button-text="保存"
       cancel-button-text="取消"
       @confirm="saveUserInfo"
@@ -95,7 +94,8 @@ import { useAgendaStore } from '../stores/agendaStore'
 
 const router = useRouter()
 const route = useRoute()
-const agendaStore = useAgendaStore() || { clearAgendaStorage: () => {} } // 兼容无 agendaStore 场景
+// 兼容无 agendaStore 场景，避免报错
+const agendaStore = useAgendaStore?.() || { clearAgendaStorage: () => {} }
 
 // 左侧导航折叠状态
 const sidebarCollapsed = ref(false)
@@ -169,7 +169,6 @@ const saveUserInfo = () => {
   alert('个人信息保存成功！')
 }
 
-
 // 导航菜单列表
 const menuList = ref([
   { path: '/home', title: '首页', icon: 'home-o' },
@@ -198,19 +197,24 @@ const handleMenuClick = (path) => {
   currentPath.value = path
   router.push(path)
 }
+
 const handleLogout = () => {
   if (!confirm('确定要退出登录吗？')) {
     return
   }
 
+  // 清除本地缓存
   localStorage.removeItem('userName')
   localStorage.removeItem('userAvatar')
   localStorage.removeItem('rememberedUsername')
   localStorage.removeItem('rememberedPwd')
   localStorage.removeItem('token')
 
+  // 重置用户信息
   userName.value = '会议参与者'
   userAvatar.value = ''
+  
+  // 跳转到登录页
   router.push('/login')
   alert('已成功退出登录！')
 }
@@ -232,19 +236,18 @@ const clearLocalCache = () => {
 }
 
 onMounted(() => {
+  // 从本地缓存加载用户信息
   const savedName = localStorage.getItem('userName')
   const savedAvatar = localStorage.getItem('userAvatar')
   
   if (savedName) {
     userName.value = savedName
-  } else {
-    userName.value = '会议参与者'
   }
-  
   if (savedAvatar) {
     userAvatar.value = savedAvatar
   }
 
+  // 监听路由变化，更新当前选中菜单
   watch(
     () => route.path,
     (newPath) => {
@@ -253,6 +256,7 @@ onMounted(() => {
     { immediate: true }
   )
 
+  // 监听用户信息变化，自动保存到本地缓存
   watch([userName, userAvatar], () => {
     saveToLocalStorage()
   }, { deep: true })
@@ -266,12 +270,12 @@ onMounted(() => {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color: #f5f7fa;
+  background-color: var(--light-gray-color);
 }
 
 /* 左侧导航栏 */
 .left-sidebar {
-  width: 240px;
+  width: 200px;
   height: 100vh;
   background-color: #13171b;
   color: #fff;
@@ -288,17 +292,18 @@ onMounted(() => {
 }
 
 .sidebar-header {
-  height: 100px;
+  height: 60px; /* 统一高度，与用户信息区对齐 */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 15px;
-  border-bottom: 1px solid #13171b;
+  padding: 0 20px;
+  border-bottom: 1px solid #1f2d3d;
   background-color: #13171b;
 }
 
 .sidebar-title {
   font-weight: bold;
+  font-size: 18px;
 }
 
 .collapse-btn {
@@ -306,23 +311,27 @@ onMounted(() => {
   border: none;
   color: #fff;
   cursor: pointer;
-  transition: transform 0.3s ease;}
+  transition: transform 0.3s ease;
+  font-size: 16px;
+}
 
 .collapse-btn:hover {
   transform: scale(1.1);
 }
 
+.sidebar-menu {
+  padding-top: 20px; /* 菜单顶部合理间距 */
+}
 
 .menu-item {
   display: flex;
   align-items: center;
-  padding: 12px 15px;
+  padding: 16px 20px;
   cursor: pointer;
   color: #a7b1c2;
   transition: all 0.3s ease;
-  margin: 0 5px;
-  border-radius: 4px;
-  margin-top: 100px;
+  margin: 0 8px 8px; /* 菜单项之间底部间距，移除不合理的 margin-top */
+  border-radius: 6px;
 }
 
 .menu-item.active {
@@ -335,61 +344,65 @@ onMounted(() => {
   color: #fff;
 }
 
-.menu-item[title="退出登录"] {
+/* 退出登录菜单特殊样式 */
+.menu-item:has(.menu-text:contains("退出登录")) {
   color: #ff4d4f;
 }
 
-.menu-item[title="退出登录"].active {
+.menu-item:has(.menu-text:contains("退出登录")).active {
   background-color: #ff4d4f;
   color: #fff;
 }
 
-.menu-item[title="退出登录"]:hover:not(.active) {
+.menu-item:has(.menu-text:contains("退出登录")):hover:not(.active) {
   background-color: #fff1f0;
   color: #ff4d4f;
 }
 
 .menu-icon {
-  margin: 0 10px;
-  width: 50px;
+  font-size: 20px;
+  width: 24px;
   text-align: center;
 }
 
 .menu-text {
-  margin-left: 40px;
+  margin-left: 12px;
   transition: opacity 0.3s ease;
+  font-size: 14px;
 }
 
 /* 右侧内容区 */
 .right-content {
   flex: 1;
-  margin-left: 240px;
+  margin-left: 200px; /* 与侧边栏宽度一致 */
   transition: margin-left 0.3s ease;
-  height: auto; /* 去掉固定高度 */
-  min-height: 100vh; /* 保证至少占满视口 */
-  overflow: visible; /* 去掉隐藏 */
+  height: 100vh;
+  overflow: hidden;
   position: relative;
 }
 
+/* 侧边栏折叠时，右侧内容区 margin-left 同步变化 */
 .left-sidebar.collapsed + .right-content {
-  margin-left: 80px; 
+  margin-left: 80px;
 }
 
 /* 顶部用户信息 */
 .top-user-info {
-  height: 80px;
+  height: 60px;
+  width: 120px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 0 2000px;
-  margin-top: 50px;
+  padding: 0 10px; 
   background-color: transparent;
   border-bottom: none;
+  margin:0  auto;
+  margin-right: 10px;
 }
 
 .user-avatar {
-  width: 70px;
-  height: 70px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: #f5fafe;
   display: flex;
@@ -398,7 +411,7 @@ onMounted(() => {
   color: #1989fa;
   overflow: hidden;
   cursor: pointer;
-  margin-right: 10px;
+  margin-right: 12px;
   border: 2px solid #1989fa;
 }
 
@@ -411,17 +424,16 @@ onMounted(() => {
 .user-name {
   color: #333;
   font-weight: 500;
+  font-size: 16px;
 }
 
-/* 右侧内容容器 */
+/* 右侧内容容器（优化滚动，避免内容截断） */
 .content-container {
   width: 100%;
-  height: auto; /* 去掉固定高度 */
-  overflow-y: visible; /* 去掉容器内滚动 */
+  overflow-y: auto; /* 内容超出时可滚动 */
   box-sizing: border-box;
-  padding: 20px 40px;
-  max-width: 1400px;
-  margin: 0 auto;
+  padding: 20px;
+  max-width: var(--content-max-width);
 }
 
 /* 个人信息弹窗 */
@@ -457,6 +469,12 @@ onMounted(() => {
   margin-bottom: 0.5em;
 }
 
+.preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .upload-btn {
   padding: 0.4em 1.2em; 
 }
@@ -464,17 +482,20 @@ onMounted(() => {
 .upload-tip {
   color: #999;
   margin-top: 0.3em;
+  font-size: 12px;
 }
 
 .name-input {
   margin-top: 0.3em;
 }
 
+/* 弹窗样式优化，避免冗余覆盖 */
+:global(.van-dialog) {
+  max-width: 600px;
+  width: 80%;
+}
+
 :global(.van-dialog__header) {
   padding: 0.8em 0;
-}
-:global(.van-dialog) {
-  max-width: 600px !important; 
-  width: 80% !important;
 }
 </style>

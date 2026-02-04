@@ -1011,6 +1011,8 @@ onMounted(() => {
 .create-meeting-view {
   min-height: 100vh;
   background-color: #f5f5f5; 
+  overflow-y: auto; 
+  height: 100vh; 
 }
 
 /* 内容区域 */
@@ -1020,6 +1022,8 @@ onMounted(() => {
   box-sizing: border-box;
   margin: 0 auto;
   min-width: 32em;
+  overflow-x: auto; 
+  margin-bottom: 100px;
 }
 
 /* 通用卡片 */

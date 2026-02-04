@@ -339,8 +339,10 @@ onUnmounted(() => {
 
 /* 页面整体容器 */
 .detail-view {
-  min-height: 100vh;
-  background-color: #f5f5f5;
+ min-height: 100vh;
+  background-color: #f5f5f5; 
+  overflow-y: auto; 
+  height: 100vh; 
 }
 
 /* 内容外层容器*/
@@ -364,6 +366,7 @@ onUnmounted(() => {
 .adjust-card {
   width: 100%;
   box-sizing: border-box; 
+  margin-bottom: 100px;
 }
 
 .card-title {

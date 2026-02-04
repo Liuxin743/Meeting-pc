@@ -1069,7 +1069,7 @@ END:VCALENDAR`.replace(/\\n/g, '')
 /* 议程操作按钮 */
 .agenda-actions {
   display: flex;
-  gap: 5em;
+  gap: 1em;
   margin-bottom: 1em;
   flex-wrap: wrap;
 }
