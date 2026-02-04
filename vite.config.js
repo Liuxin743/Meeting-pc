@@ -5,7 +5,7 @@ const isProduction = process.env.NODE_ENV === 'production'
 
 export default defineConfig({
   plugins: [vue()],
-  base: isProduction ? '/Meeting-pc/' : '/',  
+  base: '/Meeting-pc/',  
   
   build: {
     outDir: 'dist',         
